@@ -21,7 +21,7 @@ export class HeaderComponent {
 
   isSubMenuOpen: boolean = false;
   nom : string = "Léo HOTZ";
-  nomTP : string = "TP05"
+  nomTP : string = "Projet"
   areArtclesInPanier : boolean = false;
 
   constructor(private store : Store, private connexionService: ConnexionService) { }
