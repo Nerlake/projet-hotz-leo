@@ -1,49 +1,10 @@
-const { v4: uuidv4 } = require ("uuid");
+
 const { ACCESS_TOKEN_SECRET }  = require ("../config.js");
-const fs = require('fs');
-const path = require('path');
 
 const jwt = require('jsonwebtoken');
-const filePath = path.join(__dirname, '/bouchon/utilisateurs.json');
 
 const db = require("../models");
 const Utilisateur = db.utilisateur;
-const Op = db.Sequelize.Op;
-
-const getUsersFromFile = () => {
-  const usersData = fs.readFileSync(filePath, 'utf-8');
-  return JSON.parse(usersData);
-};
-
-// const addUserToFile = (user) => {
-//   const users = getUsersFromFile();
-//   users.push(user);
-//   fs.writeFile(filePath, JSON.stringify(users), (err) => {
-//     if (err) {
-//       res.status(500).send({
-//         message: err
-//       });
-//     } else {
-//       res.send(user);
-//     }
-//   });
-// }
-
-// addUserToFile promise version
-const addUserToFile = (user) => {
-  return new Promise((resolve, reject) => {
-    const users = getUsersFromFile();
-    users.push(user);
-    fs.writeFile(filePath, JSON.stringify(users), (err) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(user);
-      }
-    });
-  });
-}
-
 
 function generateAccessToken(user) {
     return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '365d' });
@@ -51,38 +12,52 @@ function generateAccessToken(user) {
 
 exports.register = (req, res) => {
   const newUser = {
-    id: uuidv4(),
     nom: req.body.nom,
     prenom: req.body.prenom,
     email: req.body.email,
     login: req.body.login,
     password: req.body.password
   };
-  
-  Utilisateur.create(newUser)
-  .then(data => {
-    res.send(data);
-  })
-  const users = getUsersFromFile();
-  const foundUser = users.find(user => user.login === newUser.login); // Correction ici pour utiliser le 'login'
-  
-  if (foundUser) {
-    res.status(401).send({
-      message: "Nom d'utilisateur déjà utilisé!"
-    });
-  } else {
-    addUserToFile(newUser)
-    .then(() => {
-      this.login(req, res);
+
+  Utilisateur.findOne({ where: { login: newUser.login } })
+    .then(data => {
+      if (data) {
+        res.status(401).send({
+          message: "Nom d'utilisateur déjà utilisé!"
+        });
+      }
+      else{
+        Utilisateur.create(newUser)
+        .then(data => {
+          const user = {
+            nom: data.nom,
+            prenom: data.prenom,
+            email: data.email,
+           };
+              
+          let accessToken = generateAccessToken(user);
+          res.setHeader('Authorization', `Bearer ${accessToken}`);
+          user.token = accessToken;
+
+          console.log (accessToken);
+          res.send(user);
+        })
+        .catch(err => {
+          res.status(500).send({
+            message: err.message || "Une erreur s'est produite lors de la création de l'utilisateur."
+          });
+        });
+      }
     })
-      
-  }
+    .catch(err => {
+      res.status(500).send({
+        message: "Nom d'utilisateur déjà utilisé!"
+      });
+    }
+  );
 };
   
 
-
-
-// Find a single Utilisateur with an login
 exports.login = (req, res) => {
   const utilisateur = {
     login: req.body.login,
