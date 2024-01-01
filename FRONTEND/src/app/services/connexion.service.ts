@@ -6,6 +6,7 @@ import { AjouterUtilisateur, SupprimerUtilisateur } from '../ngxs/states/user.st
 import { Utilisateur } from '../models/utilisateur.model';
 import { Router } from '@angular/router';
 import { ViderPanier } from '../ngxs/states/panier.state';
+import { AppConfig } from '../config';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class ConnexionService {
     constructor(private httpClient: HttpClient, private store: Store, private router: Router) { }
 
 
-    url : string = "https://tp-angular-backend-hotz-leo.onrender.com/api/utilisateur/login"; 
+    url : string =  AppConfig.apiUrl + "/api/utilisateur/login"; 
 
     private errorMessage = new BehaviorSubject<string>('');
     errorMessageObservable = this.errorMessage.asObservable();

@@ -5,6 +5,7 @@ import { Store } from '@ngxs/store';
 import { AjouterUtilisateur, SupprimerUtilisateur } from '../ngxs/states/user.state';
 import { Utilisateur } from '../models/utilisateur.model';
 import { Router } from '@angular/router';
+import { AppConfig } from '../config';
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class InscriptionService {
     constructor(private httpClient: HttpClient, private store: Store, private router: Router) { }
 
 
-    url : string = "https://tp-angular-backend-hotz-leo.onrender.com/api/utilisateur/register"; 
+    url : string =  AppConfig.apiUrl + "/api/utilisateur/register"; 
 
     private errorMessage = new BehaviorSubject<string>('');
     errorMessageObservable = this.errorMessage.asObservable();

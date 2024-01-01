@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
 import { UserState } from '../ngxs/states/user.state';
 import { switchMap } from 'rxjs/operators'; // Import 'switchMap' operator
+import { AppConfig } from '../config';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class ProduitService {
     
     constructor(private httpClient: HttpClient, private store: Store) { }
 
-    url: string = "https://tp-angular-backend-hotz-leo.onrender.com/api/catalogue"; 
+    url: string = AppConfig.apiUrl + "/api/catalogue"; 
     produits: Produit[] = [];
 
     getAllProduct(): Observable<Produit[]> {

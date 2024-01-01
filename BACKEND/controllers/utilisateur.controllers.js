@@ -89,7 +89,6 @@ exports.login = (req, res) => {
     password: req.body.password
   };
 
-  // const users = getUsersFromFile();
   Utilisateur.findOne({ where: { login: utilisateur.login } })
   .then(data => {
 
