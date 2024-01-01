@@ -1,0 +1,21 @@
+<div class="panier-container" *ngIf="panier$ | async as produits; else panierVide">
+    <div class="panier">
+        <h1>Contenu de votre panier : </h1>
+        <app-item-panier *ngFor="let produit of produits" [produit]="produit"></app-item-panier>
+    </div>
+    <div class="panier-resume">
+        <div class="panier-resume-gauche">              
+            <h1>Résumé de votre panier : </h1>
+            <span class="prix-total">Prix total : {{prixTotal$ | async | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</span>
+        </div>
+        <div class="panier-resume-droite">
+            <button class="boutton-acheter" >Acheter</button>
+        </div>
+    </div>
+</div>
+
+<ng-template #panierVide>
+    <div class="panier-vide">
+        <p>Votre panier est vide.</p>
+    </div>
+</ng-template>

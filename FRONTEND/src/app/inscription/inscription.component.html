@@ -1,0 +1,14 @@
+<div class="inscription-container">
+    <div class="inscription">
+        <h1>Inscription</h1>
+        <input [(ngModel)]="prenom" type="text" class="inscription-field" placeholder="Prénom">
+        <input [(ngModel)]="nom" type="text" class="inscription-field" placeholder="Nom">
+        <input [(ngModel)]="login" type="text" class="inscription-field" placeholder="Nom d'utilisateur">
+        <input [(ngModel)]="email" type="text" class="inscription-field" placeholder="Adresse email">
+        <input [(ngModel)]="password" type="password" class="inscription-field" placeholder="Mot de passe">
+        <input [(ngModel)]="password2" type="password" class="inscription-field" placeholder="Retapez mot de passe">
+        <span class="error-message">{{error}}</span>
+        <button class="inscription-button" (click)="inscription()" >S'inscrire</button>
+        <span class="connexion" routerLink="/connexion">Déja inscrit? Se connecter</span>
+    </div>
+</div>

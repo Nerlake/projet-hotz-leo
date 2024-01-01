@@ -1,0 +1,38 @@
+<!-- <div class="card">
+    <div class="product-part">
+        <img [src]="produit.image" [alt]="produit.nom" class="image">
+        <span class="product-name">{{produit.nom}}</span>
+        <p class="product-description">{{produit.description}}</p>
+        <span class="product-price">{{produit.prix | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</span>
+    </div>
+    <button class="product-button" (click)="ajouterAuPanier(produit)">Ajouter au panier</button>
+</div> -->
+
+<div class="wrapper">
+    <div class="container">
+    <img [src]="produit.image" [alt]="produit.nom" class="top"/>
+      <div class="bottom">
+        <div class="left">
+          <div class="details">
+            <h1 class="title">{{produit.nom}}</h1>
+            <p>{{produit.prix | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</p>
+          </div>
+          <div class="buy" (click)="ajouterAuPanier(produit)"><i class="material-icons">add_shopping_cart</i></div>
+        </div>
+        <div class="right">
+          <div class="done"><i class="material-icons">done</i></div>
+          <div class="details">
+            <h1>{{produit.nom}}</h1>
+            <p>Added to your cart</p>
+          </div>
+          <div class="remove"><i class="material-icons">clear</i></div>
+        </div>
+      </div>
+    </div>
+    <div class="inside">
+      <div class="icon"><i class="material-icons">info_outline</i></div>
+      <div class="contents">
+        {{produit.description}}
+      </div>
+    </div>
+  </div>

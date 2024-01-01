@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "nom": "Montre",
+        "description": "Decouvrez la nouvelle montre qui indique l'heure.",
+        "image": "https://www.bijouteriearvel.fr/media/catalog/product/cache/4806c6dfaf10399b4fa4e57794e20cb4/202111/festina/F20285_3_P_1_f20285_3.jpg",
+        "prix": 249.99
+    },
+    {
+        "id": 2,
+        "nom": "Chaussures",
+        "description": "Marchez vers la liberté.",
+        "image": "https://www.cdiscount.com/pdt2/4/5/4/1/700x700/mp03089454/rw/casual-chaussure-homme-basket-homme-respirant-d.jpg",
+        "prix": 99.99
+    },
+    {
+        "id": 3,
+        "nom": "Voiture",
+        "description": "Voyagez en sécurité.",
+        "image": "https://thegoodlife.fr/wp-content/uploads/sites/2/2022/11/the-good-life-voitures-de-luxe-marques-reticentes-vignette_3744x2400.jpg",
+        "prix": 5200.99
+    },
+    {
+        "id": 4,
+        "nom": "PC Portable",
+        "description": "Explorez de nouveaux horizons avec notre ordinateur portable ultra-performant, idéal pour les professionnels et les gamers.",
+        "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/71+3oOMogwL.jpg",
+        "prix": 1200.99
+    },
+    {
+        "id": 5,
+        "nom": "Caméra",
+        "description": "Immortalisez chaque instant avec une qualité d'image exceptionnelle grâce à notre caméra professionnelle dernier cri.",
+        "image": "https://www.visualsfrance.com/7300-large_default/ursa-mini-pro-12k.jpg",
+        "prix": 330.50
+    },
+    {
+        "id": 6,
+        "nom": "Vélo de Montagne",
+        "description": "Atteignez des sommets inexplorés avec notre vélo de montagne conçu pour les terrains les plus exigeants.",
+        "image": "https://www.velomag.com/wp-content/uploads/2019/07/trek-roscoe-6-1024x768.jpg",
+        "prix": 580.99
+    },
+    {
+        "id": 7,
+        "nom": "Casque Audio",
+        "description": "Plongez dans un univers sonore riche et détaillé avec notre casque audio haute fidélité.",
+        "image": "https://www.cdiscount.com/pdt2/3/4/5/1/700x700/bos3402203136345/rw/bose-quietcomfort-45-casque-audio-bluetooth-sans-f.jpg",
+        "prix": 75.99
+    },
+    {
+        "id": 8,
+        "nom": "Smartphone",
+        "description": "Restez connecté avec le monde grâce à notre smartphone à la pointe de la technologie et au design épuré.",
+        "image": "https://static.fnac-static.com/multimedia/Images/FR/MDM/18/f1/52/22212888/3756-1/tsp20231104071401/Apple-iPhone-15-Pro-Max-6-7-5G-Double-SIM-256-Go-Natural-Titanium.jpg",
+        "prix": 999.99
+    },
+    {
+        "id": 9,
+        "nom": "Sac à Dos",
+        "description": "Conçu pour les aventuriers urbains, notre sac à dos allie confort, style et fonctionnalité.",
+        "image": "https://contents.mediadecathlon.com/p2319233/k$a43bacc6eca1c34b461c9ada4c033f41/sq/sac-a-dos-eastpak-padded-pakr-noir.jpg?format=auto&f=800x0",
+        "prix": 49.99
+    },
+    {
+        "id": 10,
+        "nom": "Lunettes",
+        "description": "Protégez vos yeux avec élégance grâce à nos lunettes de soleil alliant design moderne et protection UV optimale.",
+        "image": "https://media.intersport.fr/is/image/intersportfr/295692_TXG_Q1?$produit_l$&$product_grey$",
+        "prix": 129.99
+    },
+    {
+        "id": 11,
+        "nom": "Montre Plongée",
+        "description": "Découvrez les profondeurs marines avec notre montre de plongée étanche et résistante à la pression.",
+        "image": "https://img.grouponcdn.com/deal/3Pdz3GMhaKwvX2h3rWbcSsPp6hBP/3P-2048x1229/v1/t600x362.jpg",
+        "prix": 725.00
+    },
+    {
+        "id": 12,
+        "nom": "Tablette",
+        "description": "Exprimez votre créativité sans limite avec notre tablette graphique, parfaite pour les dessinateurs et graphistes.",
+        "image": "https://media.ldlc.com/r1600/ld/products/00/05/16/69/LD0005166918_2.jpg",
+        "prix": 199.99
+    },
+    {
+        "id": 13,
+        "nom": "Drone",
+        "description": "Capturez le monde depuis les airs avec notre drone équipé d'une caméra HD pour des prises de vue époustouflantes.",
+        "image": "https://content.pearl.fr/media/cache/default/article_ultralarge_high_nocrop/shared/images/articles/Z/ZX5/drone-quadricoptere-gps-connecte-gh-280-fpv-camera-4k-et-capteur-de-distance-ref_ZX5260_4.jpg",
+        "prix": 350.99
+    },
+    {
+        "id": 14,
+        "nom": "Enceinte Bluetooth",
+        "description": "Profitez d'un son de qualité où que vous soyez avec notre enceinte Bluetooth portable et robuste.",
+        "image": "https://www.equip-eps.fr/1282-large_default/enceinte-bluetooth-jbl-xtrem-40w-.jpg",
+        "prix": 59.99
+    },
+    {
+        "id": 15,
+        "nom": "Console de Jeux",
+        "description": "Entrez dans le monde du jeu vidéo avec notre console de dernière génération pour une expérience immersive garantie.",
+        "image": "https://boulanger.scene7.com/is/image/Boulanger/0711719424994_h_f_l_0?wid=500&hei=500",
+        "prix": 299.99
+    },
+    {
+        "id": 16,
+        "nom": "Brosse à Dents",
+        "description": "Gardez un sourire éclatant avec notre brosse à dents électrique, combinant efficacité et douceur.",
+        "image": "https://www.cdiscount.com/pdt2/0/7/0/1/700x700/fai0603658762070/rw/brosse-a-dents-electrique-rechargeable-sans-fil-po.jpg",
+        "prix": 85.99
+    },
+    {
+        "id": 17,
+        "nom": "Kit de Jardinage",
+        "description": "Cultivez votre jardin avec notre kit de jardinage complet, parfait pour les amateurs comme pour les professionnels.",
+        "image": "https://shop.teamgreen.fr/786-medium_default/outils-de-jardinage-.jpg",
+        "prix": 70.99
+    }
+]

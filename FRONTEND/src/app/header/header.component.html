@@ -1,0 +1,32 @@
+<header>
+
+    <div class="left">
+
+    </div>
+    <div class="center">
+        {{nomTP}} - {{nom}}
+    </div>
+    <div class="right" >
+        <a routerLink="/accueil" *ngIf="isConnected$ | async" class="header-button">
+            <span class="material-icons icon">
+                home
+            </span>
+        </a>
+        <a routerLink="/panier" *ngIf="isConnected$ | async" class="header-button">
+            <span class="material-icons icon">shopping_basket</span>
+            <span class="nb-articles">{{nbArticles$ | async}}</span>
+        </a>
+        <!-- <a routerLink="/connexion" *ngIf="isConnected$ | async" class="header-button" >Se connecter</a> -->
+        <a class="header-button"  *ngIf="isConnected$ | async" mat-button [matMenuTriggerFor]="menu">
+            <span class="material-icons icon">
+                account_circle
+            </span>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Profil</button>
+            <button mat-menu-item (click)="deconnexion()">Se deconnecter</button>
+        </mat-menu>
+    </div>
+</header>
+
+

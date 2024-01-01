@@ -1,0 +1,7 @@
+<div class="liste-produits-container">
+    <h1>{{titre}}</h1>
+    <span class="liste-produits-resultat">{{filteredProduits.length}} resultat(s)</span>
+    <div class="liste-produits">
+        <app-produit *ngFor="let produit of filteredProduits" [produit]="produit"></app-produit>
+    </div>
+</div>

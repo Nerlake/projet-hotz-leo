@@ -1,0 +1,11 @@
+<div class="connexion-container">
+    <div class="connexion">
+        <h1>Connexion</h1>
+        <input [(ngModel)]="username" type="text" placeholder="Nom d'utilisateur" class="input" >
+        <input [(ngModel)]="password"type="password" placeholder="Mot de passe" class="input" >
+        <span class="error-message">{{error}}</span>
+        <button [ngClass]="{'disabled': isConnecting}" [disabled]="isConnecting" class="connexion-button" (click)="connexion()">Se connecter</button>
+        <span class="create-account" routerLink="/inscription">Nouveau? Créer un nouveau compte</span>
+    </div>
+</div>
+    

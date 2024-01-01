@@ -1,0 +1,45 @@
+.panier-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.panier{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+
+.panier-resume{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    background-color: #000000;
+    color: white ;
+
+    position: fixed;
+    bottom: 0;
+
+}
+
+.boutton-acheter{
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    height: 30px;
+    width: 100px;
+}
+
+.boutton-acheter:hover{
+    background: rgb(181, 179, 179);
+    cursor: not-allowed;
+}

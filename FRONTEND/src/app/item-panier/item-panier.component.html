@@ -1,0 +1,9 @@
+<div class="item-panier-container">
+    <div class="item-panier">
+        <img [src]="produit.image" alt="article" class="img-article-panier"/>
+        <strong><span class="nom-article-panier">{{produit.nom}}</span></strong>
+        <span class="prix-article-panier">{{produit.prix | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</span>
+        <span class="quantite-article-panier">{{quantite}}x</span>
+        <button class="boutton-supprimer" (click)="supprimerDuPanier()" >Supprimer</button>
+    </div>
+</div>
