@@ -6,6 +6,10 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const filePath = path.join(__dirname, '/bouchon/utilisateurs.json');
 
+const db = require("../models");
+const Utilisateur = db.utilisateur;
+const Op = db.Sequelize.Op;
+
 const getUsersFromFile = () => {
   const usersData = fs.readFileSync(filePath, 'utf-8');
   return JSON.parse(usersData);
@@ -55,6 +59,10 @@ exports.register = (req, res) => {
     password: req.body.password
   };
   
+  Utilisateur.create(newUser)
+  .then(data => {
+    res.send(data);
+  })
   const users = getUsersFromFile();
   const foundUser = users.find(user => user.login === newUser.login); // Correction ici pour utiliser le 'login'
   
@@ -81,16 +89,16 @@ exports.login = (req, res) => {
     password: req.body.password
   };
 
-  
-  const users = getUsersFromFile();
-  const foundUser = users.find(user => user.login === utilisateur.login && user.password === utilisateur.password);
-  if (foundUser) {
+  // const users = getUsersFromFile();
+  Utilisateur.findOne({ where: { login: utilisateur.login } })
+  .then(data => {
 
+    if (data.password === utilisateur.password) {
       const user = {
-        id: foundUser.id,
-        nom: foundUser.nom,
-        prenom: foundUser.prenom,
-        email: foundUser.email,
+        id: data.id,
+        nom: data.nom,
+        prenom: data.prenom,
+        email: data.email,
        };
         
         let accessToken = generateAccessToken(user);
@@ -102,12 +110,20 @@ exports.login = (req, res) => {
 
       
         res.send(user);
-    }
+    }    
     else{
       res.status(401).send({
         message: "Nom d'utilisateur ou mot de passe incorrect!"
       });
     }   
+  }
+  )
+  .catch(err => {
+    res.status(500).send({
+      message: "Nom d'utilisateur ou mot de passe incorrect!"
+    });
+  });
+
 };
 
 
