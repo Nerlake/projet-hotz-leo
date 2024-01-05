@@ -41,5 +41,5 @@
 
 .boutton-acheter:hover{
     background: rgb(181, 179, 179);
-    cursor: not-allowed;
+    /* cursor: not-allowed; */
 }

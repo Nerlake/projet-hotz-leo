@@ -1,0 +1,45 @@
+<div class="paiement_container">
+    <!-- <div class="paiement" *ngIf="panier$ | async as produits">
+            <h1>Contenu de votre panier : </h1>
+            <app-item-panier *ngFor="let produit of produits" [produit]="produit"></app-item-panier>
+    </div> -->
+    <div class="paiement">
+        <div class="paiement_form_left">
+            <h1>Formulaire de paiement</h1>
+            <h3>Total à regler: <strong>{{prixTotal$ | async | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</strong></h3>
+            <img [src]="imgSrc" alt="carte bancaires" class="cb_img">
+            <input type="text" class="paiement_input" placeholder="Numéro de carte bancaire">
+            <input type="text" class="paiement_input" placeholder="Nom du titulaire">
+            <input type="text" class="paiement_input" placeholder="Date d'expiration">
+            <input type="text" class="paiement_input" placeholder="Cryptogramme visuel">
+            <button class="paiement_boutton">Payer</button>
+        </div>
+        <div class="paiement_form_right">
+            <h1>Récapitulatif de la commande:</h1>
+            <hr>
+            <div class="paiement_form_right_container" *ngIf="panier$ | async as produits">
+                <div *ngFor="let produit of produits" class="line">
+                    <div class="paiement_form_right_container_left">
+                        <p>{{ produit.nom }}</p> <!-- Remplacez 'nom' par la propriété correspondante dans votre modèle -->
+                    </div>
+                    <div class="paiement_form_right_container_right">
+                        <p>{{ produit.prix | currency:'EUR':'symbol-narrow':'1.2-2':'fr' }}</p> <!-- Remplacez 'prix' par la propriété correspondante dans votre modèle -->
+                    </div>
+                </div>
+                <div class="line_break">
+
+                </div>
+                <div class="line pymnt">
+                    <div class="paiement_form_right_container_left">
+                        <p>Total</p>
+                    </div>
+                    <div class="paiement_form_right_container_right">
+                        <strong>{{prixTotal$ | async | currency:'EUR':'symbol-narrow':'1.2-2':'fr'}}</strong>
+                    </div>
+            </div>
+        </div>
+            
+
+
+    </div>
+</div>

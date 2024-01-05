@@ -22,6 +22,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { HeroComponent } from './hero/hero.component';
 import {NgxTypedJsModule} from 'ngx-typed-js';
+import { PaiementComponent } from './paiement/paiement.component';
 
 registerLocaleData(localeFr);
 
@@ -38,6 +39,7 @@ registerLocaleData(localeFr);
     ConnexionComponent,
     InscriptionComponent,
     HeroComponent,
+    PaiementComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,7 @@ registerLocaleData(localeFr);
     NgxsModule.forRoot([PanierState, UserState]),
     BrowserAnimationsModule,
     MatMenuModule,
-    NgxTypedJsModule
+    NgxTypedJsModule,
   ],
   providers: [{provide: LOCALE_ID, useValue: 'fr-FR'}],
   bootstrap: [AppComponent]
