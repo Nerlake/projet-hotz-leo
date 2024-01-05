@@ -18,7 +18,7 @@ module.exports = (sequelize, Sequelize) => {
           type: Sequelize.STRING,
       },
       prix: {
-        type : Sequelize.FLOAT,
+        type : Sequelize.DECIMAL(10,2),
       },
    });
   return Produit;
