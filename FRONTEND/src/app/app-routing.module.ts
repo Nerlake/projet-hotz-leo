@@ -6,15 +6,16 @@ import { PanierComponent } from './panier/panier.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { AuthGuard } from './services/authgarde.service';
+import { AuthGuardBasket } from './services/authgardebasket.service';
 import { PaiementComponent } from './paiement/paiement.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/accueil', pathMatch: 'full'},
     {path: 'accueil', component: HomeComponent, canActivate: [AuthGuard]},
-    {path: 'panier', component: PanierComponent, canActivate: [AuthGuard]},
+    {path: 'panier', component: PanierComponent, canActivate: [AuthGuard, AuthGuardBasket]},
     {path: 'connexion', component: ConnexionComponent},
     {path: 'inscription', component: InscriptionComponent},
-    {path: 'paiement', component: PaiementComponent, canActivate: [AuthGuard]},
+    {path: 'paiement', component: PaiementComponent, canActivate: [AuthGuard, AuthGuardBasket]},
     {path: '**', redirectTo: '/accueil'},
 
 ];
