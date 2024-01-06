@@ -28,13 +28,13 @@
 }
 
 .boutton-supprimer{
-    background: white;
     border: none;
     color: black;
     font-size: 18px;
     cursor: pointer;
     height: 30px;
     width: 100px;
+    text-align: center;
 }
 
 .boutton-supprimer:hover{

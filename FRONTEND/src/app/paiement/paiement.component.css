@@ -15,6 +15,7 @@
   padding-bottom: 70px;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .paiement_form_left{
@@ -29,7 +30,7 @@
 
 .paiement_form_left input{
     height: 35px;
-    width: 350px;
+    width: 100%;
     margin-bottom: 10px;
 }
 
@@ -97,3 +98,24 @@
 .pymnt{
     margin-top: 10px;
 }
+
+
+.paiement_form_left, .paiement_form_right {
+    flex-basis: 50%; 
+
+  }
+  
+  @media (max-width: 600px) {
+    .paiement_form_left, .paiement_form_right {
+      flex-basis: 100%; 
+    }
+
+    .paiement_form_right {
+        order: -1; /* Cela placera la partie droite en premier */
+        border-left: none;
+      }
+    
+      .paiement_form_left {
+        order: 1; /* Cela placera la partie gauche en second */
+      }
+  }
