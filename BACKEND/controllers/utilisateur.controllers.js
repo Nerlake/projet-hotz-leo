@@ -1,9 +1,8 @@
 
 const { ACCESS_TOKEN_SECRET }  = require ("../config.js");
-
 const jwt = require('jsonwebtoken');
-
 const db = require("../models");
+const bcrypt = require("bcrypt");
 const Utilisateur = db.utilisateur;
 
 function generateAccessToken(user) {
@@ -27,6 +26,9 @@ exports.register = (req, res) => {
         });
       }
       else{
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(newUser.password, salt);
+        newUser.password = hash;
         Utilisateur.create(newUser)
         .then(data => {
           const user = {
@@ -64,10 +66,12 @@ exports.login = (req, res) => {
     password: req.body.password
   };
 
+  // compare password with hash
+
   Utilisateur.findOne({ where: { login: utilisateur.login } })
   .then(data => {
-
-    if (data.password === utilisateur.password) {
+    var passwordIsValid = bcrypt.compareSync(utilisateur.password, data.password);
+    if (passwordIsValid) {
       const user = {
         id: data.id,
         nom: data.nom,
